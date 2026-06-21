@@ -294,7 +294,7 @@ public partial class TodayRidePage : ContentPage
             "#16A34A",
             async () =>
             {
-                await CompletePackageAsync(package.Id);
+                await Navigation.PushAsync(new StatusPage(package.Id));
             });
 
         var buttonGrid = new Grid

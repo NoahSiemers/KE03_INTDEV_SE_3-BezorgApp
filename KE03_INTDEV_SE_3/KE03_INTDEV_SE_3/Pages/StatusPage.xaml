@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.StatusPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F3F4F6"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            BackgroundColor="#15191C"
+            Padding="20,45,20,18"
+            ColumnDefinitions="Auto,*"
+            ColumnSpacing="12">
+
+            <Frame
+                WidthRequest="42"
+                HeightRequest="42"
+                CornerRadius="21"
+                BackgroundColor="#2A2F34"
+                Padding="0"
+                HasShadow="False">
+
+                <Label
+                    Text="&#xf060;"
+                    FontFamily="FontAwesome"
+                    TextColor="White"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                <Label
+                    Text="Status aanpassen"
+                    FontSize="23"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+
+                <Label
+                    x:Name="PackageInfoLabel"
+                    FontSize="13"
+                    TextColor="#D1D5DB" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="18" Spacing="16">
+
+                <Frame
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="18"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label
+                            Text="KIES EEN STATUS"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <Frame
+                            x:Name="DeliveredFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="15"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label
+                                    x:Name="DeliveredIcon"
+                                    Text="&#xf111;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="18"
+                                    TextColor="#CBD5E1" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Afgeleverd"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnDeliveredTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="NeighborFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="15"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label
+                                    x:Name="NeighborIcon"
+                                    Text="&#xf111;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="18"
+                                    TextColor="#CBD5E1" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Bezorgd bij buren"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNeighborTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="PickupFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="15"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label
+                                    x:Name="PickupIcon"
+                                    Text="&#xf111;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="18"
+                                    TextColor="#CBD5E1" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Afhaalpunt"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPickupTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="FailedFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="15"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label
+                                    x:Name="FailedIcon"
+                                    Text="&#xf111;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="18"
+                                    TextColor="#CBD5E1" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Niet geleverd"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFailedTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Buren informatie -->
+                <Frame
+                    x:Name="NeighborInfoFrame"
+                    IsVisible="False"
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="18"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            Text="BUURINFORMATIE"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <Label
+                            Text="Naam buur"
+                            FontSize="13"
+                            TextColor="#374151" />
+
+                        <Entry
+                            x:Name="NeighborNameEntry"
+                            Placeholder="Naam buur"
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Label
+                            Text="Huisnummer buur"
+                            FontSize="13"
+                            TextColor="#374151" />
+
+                        <Entry
+                            x:Name="NeighborHouseNumberEntry"
+                            Placeholder="Bijv. 14a"
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="#F9FAFB" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Afhaalpunt -->
+                <Frame
+                    x:Name="PickupInfoFrame"
+                    IsVisible="False"
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="18"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            Text="AFHAALPUNT"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <Entry
+                            x:Name="PickupPointEntry"
+                            Placeholder="Naam of adres afhaalpunt"
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="#F9FAFB" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Niet geleverd redenen -->
+                <Frame
+                    x:Name="FailedReasonFrame"
+                    IsVisible="False"
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="18"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label
+                            Text="REDEN"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <Frame
+                            x:Name="ReasonCustomerNotHomeFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label x:Name="ReasonCustomerNotHomeIcon" Text="&#xf111;" FontFamily="FontAwesome" FontSize="16" TextColor="#CBD5E1" />
+                                <Label Grid.Column="1" Text="Klant niet thuis" FontSize="15" TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnReasonCustomerNotHomeTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="ReasonWrongAddressFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label x:Name="ReasonWrongAddressIcon" Text="&#xf111;" FontFamily="FontAwesome" FontSize="16" TextColor="#CBD5E1" />
+                                <Label Grid.Column="1" Text="Adres onjuist" FontSize="15" TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnReasonWrongAddressTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="ReasonDamagedFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label x:Name="ReasonDamagedIcon" Text="&#xf111;" FontFamily="FontAwesome" FontSize="16" TextColor="#CBD5E1" />
+                                <Label Grid.Column="1" Text="Pakket beschadigd" FontSize="15" TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnReasonDamagedTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="ReasonNoAccessFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label x:Name="ReasonNoAccessIcon" Text="&#xf111;" FontFamily="FontAwesome" FontSize="16" TextColor="#CBD5E1" />
+                                <Label Grid.Column="1" Text="Geen toegang tot gebouw" FontSize="15" TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnReasonNoAccessTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            x:Name="ReasonOtherFrame"
+                            CornerRadius="16"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label x:Name="ReasonOtherIcon" Text="&#xf111;" FontFamily="FontAwesome" FontSize="16" TextColor="#CBD5E1" />
+                                <Label Grid.Column="1" Text="Anders" FontSize="15" TextColor="#1F2937" />
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnReasonOtherTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Editor
+                            x:Name="OtherReasonEditor"
+                            IsVisible="False"
+                            Placeholder="Typ hier de reden..."
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="#F9FAFB"
+                            HeightRequest="100" />
+
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom buttons -->
+        <Grid
+            Grid.Row="2"
+            Padding="18,12,18,18"
+            BackgroundColor="White"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="12">
+
+            <Button
+                Text="Annuleren"
+                HeightRequest="58"
+                BackgroundColor="#F3F4F6"
+                TextColor="#1F2937"
+                FontAttributes="Bold"
+                CornerRadius="16"
+                Clicked="OnCancelClicked" />
+
+            <Button
+                Grid.Column="1"
+                Text="&#xf00c;  Opslaan"
+                FontFamily="FontAwesome"
+                HeightRequest="58"
+                BackgroundColor="#2D7DF6"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="16"
+                Clicked="OnSaveClicked" />
+        </Grid>
+
+    </Grid>
+</ContentPage>
