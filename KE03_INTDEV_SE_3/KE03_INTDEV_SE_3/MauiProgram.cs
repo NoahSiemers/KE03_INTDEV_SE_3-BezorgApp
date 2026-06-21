@@ -4,7 +4,6 @@ using KE03_INTDEV_SE_3.Pages;
 using KE03_INTDEV_SE_3.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Net.NetworkInformation;
 
 namespace KE03_INTDEV_SE_3;
 
@@ -23,11 +22,13 @@ public static class MauiProgram
                 fonts.AddFont("Font Awesome 7 Free-Solid-900.otf", "FontAwesome");
             });
 
-        string connectionString =
-            "Server=(localdb)\\MSSQLLocalDB;Database=MatrixIncRittenDb;Trusted_Connection=True;TrustServerCertificate=True;";
+        string databasePath = Path.Combine(
+            FileSystem.AppDataDirectory,
+            "MatrixIncRittenDb.db"
+        );
 
         builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(connectionString));
+            options.UseSqlite($"Filename={databasePath}"));
 
         builder.Services.AddSingleton<AppState>();
 
