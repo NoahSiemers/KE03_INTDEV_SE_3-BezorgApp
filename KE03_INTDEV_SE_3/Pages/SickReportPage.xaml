@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.SickReportPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Ziekmelden"
+    BackgroundColor="#F3F4F6">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+
+            <Label
+                Text="Ziekmelden"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#111827" />
+
+            <!-- Dienstkaart -->
+            <Frame
+                CornerRadius="20"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                    <Label
+                        Text="&#xf073;"
+                        FontFamily="FontAwesome"
+                        FontSize="24"
+                        TextColor="#2D7DF6"
+                        VerticalOptions="Center" />
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="5">
+                        <Label
+                            Text="Je dienst vandaag"
+                            FontSize="17"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                        <Label
+                            x:Name="ShiftTimeLabel"
+                            Text="Dienst laden..."
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                        <Label
+                            x:Name="RouteInfoLabel"
+                            Text="Routegegevens laden..."
+                            FontSize="14"
+                            TextColor="#6B7280" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Uitleg -->
+            <Frame
+                CornerRadius="18"
+                BackgroundColor="#FFFBEB"
+                BorderColor="#F59E0B"
+                HasShadow="False"
+                Padding="16">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Belangrijke regel"
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        TextColor="#92400E" />
+
+                    <Label
+                        Text="Je kunt je via de app ziekmelden tot 3 uur vóór je dienst begint. Begint je dienst binnen 3 uur? Dan moet je telefonisch contact opnemen met de planner."
+                        FontSize="14"
+                        TextColor="#78350F"
+                        LineBreakMode="WordWrap" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Te laat ziekmelden -->
+            <Frame
+                x:Name="CallPlannerPanel"
+                CornerRadius="20"
+                BackgroundColor="#FEF2F2"
+                BorderColor="#FCA5A5"
+                HasShadow="True"
+                Padding="18"
+                IsVisible="False">
+
+                <VerticalStackLayout Spacing="14">
+                    <Label
+                        Text="Ziekmelden via app niet meer mogelijk"
+                        FontSize="21"
+                        FontAttributes="Bold"
+                        TextColor="#DC2626" />
+
+                    <Label
+                        Text="Je dienst begint binnen 3 uur. Neem telefonisch contact op met de planner zodat de route opnieuw verdeeld kan worden."
+                        FontSize="14"
+                        TextColor="#374151"
+                        LineBreakMode="WordWrap" />
+
+                    <Frame
+                        CornerRadius="14"
+                        BackgroundColor="White"
+                        BorderColor="#FCA5A5"
+                        HasShadow="False"
+                        Padding="14">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Label
+                                Text="&#xf095;"
+                                FontFamily="FontAwesome"
+                                FontSize="18"
+                                TextColor="#DC2626"
+                                VerticalOptions="Center" />
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label
+                                    Text="Planner"
+                                    FontSize="13"
+                                    TextColor="#6B7280" />
+
+                                <Label
+                                    Text="06 98765432"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <Button
+                        Text="Bel planner"
+                        BackgroundColor="#2D7DF6"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="14"
+                        HeightRequest="52"
+                        Clicked="OnCallPlannerClicked" />
+
+                    <Button
+                        Text="Terug naar profiel"
+                        BackgroundColor="White"
+                        TextColor="#111827"
+                        BorderColor="#D1D5DB"
+                        BorderWidth="1"
+                        CornerRadius="14"
+                        HeightRequest="52"
+                        Clicked="OnBackToProfileClicked" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Formulier ziekmelden -->
+            <Frame
+                x:Name="SickReportFormPanel"
+                CornerRadius="20"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18"
+                IsVisible="False">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="Ziekmelding invullen"
+                        FontSize="21"
+                        FontAttributes="Bold"
+                        TextColor="#111827" />
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            Text="Reden"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#374151" />
+
+                        <Picker
+                            x:Name="ReasonPicker"
+                            Title="Kies een reden">
+                            <Picker.Items>
+                                <x:String>Ziek / medische reden</x:String>
+                                <x:String>Ongeval onderweg</x:String>
+                                <x:String>Familieomstandigheid</x:String>
+                                <x:String>Anders</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            Text="Toelichting"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#374151" />
+
+                        <Editor
+                            x:Name="DescriptionEditor"
+                            Placeholder="Geef kort aan waarom je niet kunt werken..."
+                            AutoSize="TextChanges"
+                            HeightRequest="100"
+                            BackgroundColor="#F9FAFB" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            Text="Verwachte terugkeer"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#374151" />
+
+                        <Picker
+                            x:Name="ReturnPicker"
+                            Title="Kies verwachte terugkeer">
+                            <Picker.Items>
+                                <x:String>Morgen</x:String>
+                                <x:String>Overmorgen</x:String>
+                                <x:String>Onbekend</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <Button
+                        Text="Ziekmelding versturen"
+                        BackgroundColor="#2D7DF6"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="14"
+                        HeightRequest="52"
+                        Clicked="OnSubmitSickReportClicked" />
+
+                    <Button
+                        Text="Annuleren"
+                        BackgroundColor="White"
+                        TextColor="#111827"
+                        BorderColor="#D1D5DB"
+                        BorderWidth="1"
+                        CornerRadius="14"
+                        HeightRequest="52"
+                        Clicked="OnBackToProfileClicked" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
