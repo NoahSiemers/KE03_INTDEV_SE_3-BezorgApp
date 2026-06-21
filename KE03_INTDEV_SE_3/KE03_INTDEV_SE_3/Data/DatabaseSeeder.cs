@@ -45,6 +45,8 @@ namespace KE03_INTDEV_SE_3.Data
                     SequenceNumber = 1,
                     CustomerName = "Jan de School",
                     Address = "Hoofdstraat 12, Heerlen",
+                    Latitude = 50.8852,
+                    Longitude = 5.9809,
                     ActionType = "Bezorgen",
                     Size = "Middel",
                     WeightKg = 2.5
@@ -54,6 +56,8 @@ namespace KE03_INTDEV_SE_3.Data
                     SequenceNumber = 2,
                     CustomerName = "Marie de Boer",
                     Address = "Kruisweg 59, Kerkrade",
+                    Latitude = 50.8852,
+                    Longitude = 5.9809,
                     ActionType = "Ophalen",
                     Size = "Klein",
                     WeightKg = 1
@@ -63,6 +67,8 @@ namespace KE03_INTDEV_SE_3.Data
                     SequenceNumber = 3,
                     CustomerName = "M. Jansen",
                     Address = "Akerstraat 22, Heerlen",
+                    Latitude = 50.8852,
+                    Longitude = 5.9809,
                     ActionType = "Bezorgen",
                     Size = "Groot",
                     WeightKg = 4.2
@@ -72,6 +78,8 @@ namespace KE03_INTDEV_SE_3.Data
                     SequenceNumber = 4,
                     CustomerName = "M. Jansen",
                     Address = "Akerstraat 22, Heerlen",
+                    Latitude = 50.8852,
+                    Longitude = 5.9809,
                     ActionType = "Bezorgen",
                     Size = "Klein",
                     WeightKg = 0.8
@@ -81,6 +89,8 @@ namespace KE03_INTDEV_SE_3.Data
                     SequenceNumber = 5,
                     CustomerName = "Opalijn",
                     Address = "Kruisweg 59, Kerkrade",
+                    Latitude = 50.8852,
+                    Longitude = 5.9809,
                     ActionType = "Ophalen",
                     Size = "Klein",
                     WeightKg = 1

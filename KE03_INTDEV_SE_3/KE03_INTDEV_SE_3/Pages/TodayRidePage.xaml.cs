@@ -273,7 +273,15 @@ public partial class TodayRidePage : ContentPage
             "#2D7DF6",
             async () =>
             {
-                await DisplayAlert("Navigeren", "Navigatie wordt later toegevoegd.", "Ok");
+                #if WINDOWS
+                    await DisplayAlertAsync(
+                        "Navigatie",
+                        "De ingebouwde kaart werkt niet op Windows. Test deze navigatie op Android/iOS, of gebruik een Windows-compatibele map-oplossing.",
+                        "Ok");
+                    return;
+                #endif
+
+                await Shell.Current.GoToAsync($"{nameof(DeliveryNavigationPage)}?PackageId={package.Id}");
             });
 
         var infoButton = CreateActionButton(

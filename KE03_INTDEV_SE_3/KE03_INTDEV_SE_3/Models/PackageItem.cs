@@ -20,6 +20,9 @@ namespace KE03_INTDEV_SE_3.Models
 
         public double WeightKg { get; set; }
 
+        public double? Latitude { get; set; }
+        public double? Longitude { get; set; }
+
         public bool IsCompleted { get; set; }
 
         public int RideId { get; set; }

@@ -4,7 +4,6 @@ using KE03_INTDEV_SE_3.Pages;
 using KE03_INTDEV_SE_3.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Net.NetworkInformation;
 
 namespace KE03_INTDEV_SE_3;
 
@@ -13,6 +12,10 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+
+#if ANDROID || IOS || MACCATALYST
+        builder.UseMauiMaps();
+#endif
 
         builder
             .UseMauiApp<App>()
@@ -30,6 +33,9 @@ public static class MauiProgram
             options.UseSqlServer(connectionString));
 
         builder.Services.AddSingleton<AppState>();
+
+        builder.Services.AddSingleton(new HttpClient());
+        builder.Services.AddTransient<NavigationService>();
 
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<HelpPage>();

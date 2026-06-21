@@ -28,5 +28,14 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	
+	<string>We use your location to guide you to delivery stops.</string>
+
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>TemporaryFullAccuracyUsageDescription</key>
+		<string>Precise location is needed for turn-by-turn delivery navigation.</string>
+	</dict>
 </dict>
 </plist>

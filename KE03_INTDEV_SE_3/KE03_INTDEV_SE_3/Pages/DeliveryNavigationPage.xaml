@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.DeliveryNavigationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+    BackgroundColor="#F3F4F6"
+    Shell.NavBarIsVisible="False"
+    Title="Navigatie">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <Grid
+            Grid.Row="0"
+            BackgroundColor="#15191C"
+            Padding="20,45,20,16"
+            ColumnDefinitions="*,Auto">
+
+            <VerticalStackLayout Spacing="4">
+                <Label
+                    Text="Navigatie"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+
+                <Label
+                    x:Name="AddressLabel"
+                    FontSize="14"
+                    TextColor="#D1D5DB" />
+            </VerticalStackLayout>
+
+            <Button
+                Text="Sluit"
+                BackgroundColor="#374151"
+                TextColor="White"
+                CornerRadius="16"
+                Padding="14,10"
+                Clicked="OnCloseClicked" />
+        </Grid>
+
+        <maps:Map
+            x:Name="RouteMap"
+            Grid.Row="1"
+            IsShowingUser="True"
+            MapType="Street" />
+
+        <Border
+            Grid.Row="2"
+            Margin="16"
+            BackgroundColor="White"
+            Stroke="#E5E7EB"
+            StrokeThickness="1"
+            Padding="16">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="12">
+                <Grid ColumnDefinitions="*,Auto">
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Volgende instructie"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            TextColor="#6B7280" />
+
+                        <Label
+                            x:Name="NextInstructionLabel"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout HorizontalOptions="End" Spacing="4">
+                        <Label
+                            x:Name="DistanceLabel"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="#2D7DF6"
+                            HorizontalTextAlignment="End" />
+
+                        <Label
+                            x:Name="EtaLabel"
+                            FontSize="13"
+                            TextColor="#6B7280"
+                            HorizontalTextAlignment="End" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <CollectionView x:Name="StepsCollection" HeightRequest="120">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                BackgroundColor="#F9FAFB"
+                                Stroke="#E5E7EB"
+                                StrokeThickness="1"
+                                Padding="12"
+                                Margin="0,0,0,8">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="16" />
+                                </Border.StrokeShape>
+
+                                <VerticalStackLayout Spacing="2">
+                                    <Label
+                                        Text="{Binding Instruction}"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#111827" />
+                                    <Label
+                                        Text="{Binding DistanceMeters, StringFormat='{}{0:0} m'}"
+                                        FontSize="12"
+                                        TextColor="#6B7280" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                    <Button
+                        Text="Markeer geleverd"
+                        BackgroundColor="#16A34A"
+                        TextColor="White"
+                        CornerRadius="18"
+                        Clicked="OnDeliveredClicked" />
+
+                    <Button
+                        Text="Terug"
+                        BackgroundColor="#E5E7EB"
+                        TextColor="#111827"
+                        CornerRadius="18"
+                        Clicked="OnBackClicked" />
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>
