@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="KE03_INTDEV_SE_3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:KE03_INTDEV_SE_3.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#15191C"
+    Shell.TabBarForegroundColor="#2D7DF6"
+    Shell.TabBarTitleColor="#2D7DF6"
+    Shell.TabBarUnselectedColor="#9CA3AF">
+
+    <TabBar>
+        <ShellContent
+            Title="Vandaag"
+            Route="today"
+            ContentTemplate="{DataTemplate pages:TodayRidePage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="FontAwesome"
+                    Glyph="&#xf5b6;"
+                    Color="#2D7DF6" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Mijn ritten"
+            Route="myrides"
+            ContentTemplate="{DataTemplate pages:MyRidesPage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="FontAwesome"
+                    Glyph="&#xf073;"
+                    Color="#2D7DF6" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Account"
+            Route="account"
+            ContentTemplate="{DataTemplate pages:AccountPage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="FontAwesome"
+                    Glyph="&#xf007;"
+                    Color="#2D7DF6" />
+            </ShellContent.Icon>
+        </ShellContent>
+    </TabBar>
+</Shell>

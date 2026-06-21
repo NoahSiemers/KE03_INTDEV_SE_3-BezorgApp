@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.MyRidesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F3F4F6"
+    Title="Mijn ritten">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            BackgroundColor="#15191C"
+            Padding="20,45,20,22"
+            Spacing="4">
+
+            <Label
+                Text="Mijn ritten"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Label
+                x:Name="TodayDateLabel"
+                FontSize="14"
+                TextColor="#D1D5DB" />
+
+            <Label
+                x:Name="DriverNameLabel"
+                FontSize="16"
+                TextColor="White" />
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                x:Name="RidesLayout"
+                Padding="16"
+                Spacing="16" />
+        </ScrollView>
+    </Grid>
+</ContentPage>

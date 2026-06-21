@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.TodayRidePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F3F4F6"
+    Title="Vandaag">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Grid
+            Grid.Row="0"
+            BackgroundColor="#15191C"
+            Padding="20,45,20,22"
+            ColumnDefinitions="*,Auto">
+
+            <VerticalStackLayout Spacing="4">
+                <Label
+                    Text="Planning vandaag"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+
+                <Label
+                    x:Name="DateLabel"
+                    FontSize="14"
+                    TextColor="#D1D5DB" />
+            </VerticalStackLayout>
+
+            <Button
+                x:Name="StartButton"
+                Grid.Column="1"
+                Text="&#xf04b;  Start"
+                FontFamily="FontAwesome"
+                BackgroundColor="#2D7DF6"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="18"
+                Padding="18,10"
+                Clicked="OnStartClicked" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <Frame
+                    x:Name="RideInfoFrame"
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="True"
+                    Padding="18">
+
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+
+                        <VerticalStackLayout Spacing="8">
+                            <Label
+                                x:Name="BranchLabel"
+                                FontSize="21"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                x:Name="TimeLabel"
+                                FontSize="14"
+                                TextColor="#6B7280" />
+
+                            <HorizontalStackLayout Spacing="8">
+                                <Label
+                                    Text="&#xf0d1;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="14"
+                                    TextColor="#2D7DF6" />
+
+                                <Label
+                                    x:Name="BusLabel"
+                                    FontSize="14"
+                                    TextColor="#374151" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="8">
+                                <Label
+                                    Text="&#xf3c5;"
+                                    FontFamily="FontAwesome"
+                                    FontSize="14"
+                                    TextColor="#2D7DF6" />
+
+                                <Label
+                                    x:Name="RegionLabel"
+                                    FontSize="14"
+                                    TextColor="#374151" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Frame
+                            Grid.Column="1"
+                            CornerRadius="18"
+                            BackgroundColor="#F3F7FF"
+                            BorderColor="#DBEAFE"
+                            WidthRequest="115"
+                            Padding="12"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="2" HorizontalOptions="Center">
+                                <Label
+                                    Text="Nog te leveren"
+                                    FontSize="11"
+                                    TextColor="#6B7280"
+                                    HorizontalTextAlignment="Center" />
+
+                                <Label
+                                    x:Name="RemainingPackagesLabel"
+                                    FontSize="30"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827"
+                                    HorizontalTextAlignment="Center" />
+
+                                <Label
+                                    Text="pakketten"
+                                    FontSize="11"
+                                    TextColor="#6B7280"
+                                    HorizontalTextAlignment="Center" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <Label
+                    Text="Volgende stop"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    TextColor="#111827"
+                    Margin="2,4,0,0" />
+
+                <VerticalStackLayout
+                    x:Name="PackagesLayout"
+                    Spacing="15" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

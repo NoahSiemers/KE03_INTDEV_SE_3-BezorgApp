@@ -1,0 +1,380 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\data\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\data\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\ke03_intdev_se_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\ke03_intdev_se_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\beert\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\myridespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\myridespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\todayridepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\todayridepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\todayridepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\todayridepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\myridespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\myridespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\accountpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\accountpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\helppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\helppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\pages\\accountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\pages\\accountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\models\\packageitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\models\\packageitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\models\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\models\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\models\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\models\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\services\\appstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\services\\appstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|c:\\ke03_intdev_se_3-bezorgapp\\ke03_intdev_se_3\\ke03_intdev_se_3\\helpers\\servicehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF86A1D4-61AB-FF2E-8912-14272C00FF68}|KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj|solutionrelative:ke03_intdev_se_3\\helpers\\servicehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TodayRidePage.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T14:00:22.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyRidesPage.xaml.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T14:01:47.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatabaseSeeder.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Data\\DatabaseSeeder.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Data\\DatabaseSeeder.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Data\\DatabaseSeeder.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Data\\DatabaseSeeder.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:51:17.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TodayRidePage.xaml.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\TodayRidePage.xaml.cs",
+              "ViewState": "AgIAALwBAAAAAAAAAAAQwOABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T14:00:46.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MyRidesPage.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\MyRidesPage.xaml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwCgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T14:01:30.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:55:18.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\MauiProgram.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\MauiProgram.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:46:18.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KE03_INTDEV_SE_3",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3.csproj",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-21T15:29:53.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.Maui.Resizetizer.After.targets",
+              "DocumentMoniker": "C:\\Users\\beert\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeDocumentMoniker": "..\\..\\Users\\beert\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ToolTip": "C:\\Users\\beert\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeToolTip": "..\\..\\Users\\beert\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ViewState": "AgIAABcBAAAAAAAAAAAAABACAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-06-21T15:25:24.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\AppShell.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\AppShell.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\AppShell.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\AppShell.xaml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T13:53:34.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountPage.xaml.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T14:02:48.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\LoginPage.xaml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAQwLoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T13:54:47.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HelpPage.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\HelpPage.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\HelpPage.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\HelpPage.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\HelpPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T13:56:03.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountPage.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Pages\\AccountPage.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwCYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T14:02:09.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\App.xaml.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\App.xaml.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\App.xaml.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:52:18.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\App.xaml",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\App.xaml",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\App.xaml",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-21T13:52:11.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:50:36.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PackageItem.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\PackageItem.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Models\\PackageItem.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\PackageItem.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Models\\PackageItem.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:49:59.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Ride.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\Ride.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Models\\Ride.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\Ride.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Models\\Ride.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:49:28.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Driver.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\Driver.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Models\\Driver.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Models\\Driver.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Models\\Driver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:48:22.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AppState.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Services\\AppState.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Services\\AppState.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Services\\AppState.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Services\\AppState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:47:46.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServiceHelper.cs",
+              "DocumentMoniker": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Helpers\\ServiceHelper.cs",
+              "RelativeDocumentMoniker": "KE03_INTDEV_SE_3\\Helpers\\ServiceHelper.cs",
+              "ToolTip": "C:\\KE03_INTDEV_SE_3-BezorgApp\\KE03_INTDEV_SE_3\\KE03_INTDEV_SE_3\\Helpers\\ServiceHelper.cs",
+              "RelativeToolTip": "KE03_INTDEV_SE_3\\Helpers\\ServiceHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-21T13:47:03.334Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

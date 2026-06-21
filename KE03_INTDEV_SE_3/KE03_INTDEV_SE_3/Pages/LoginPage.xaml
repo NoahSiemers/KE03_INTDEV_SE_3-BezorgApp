@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F3F4F6"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid Padding="24" RowDefinitions="Auto,*,Auto">
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Spacing="8"
+            HorizontalOptions="Center"
+            Margin="0,70,0,25">
+
+            <Frame
+                WidthRequest="80"
+                HeightRequest="80"
+                CornerRadius="22"
+                BackgroundColor="#15191C"
+                Padding="0"
+                HasShadow="False">
+
+                <Label
+                    Text="&#xf0d1;"
+                    FontFamily="FontAwesome"
+                    FontSize="34"
+                    TextColor="#2D7DF6"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Frame>
+
+            <Label
+                Text="Matrix Inc."
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#111827"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Bezorgersapplicatie"
+                FontSize="15"
+                TextColor="#6B7280"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <Frame
+            Grid.Row="1"
+            Padding="24"
+            CornerRadius="24"
+            BackgroundColor="White"
+            BorderColor="#E5E7EB"
+            HasShadow="True"
+            VerticalOptions="Start">
+
+            <VerticalStackLayout Spacing="14">
+
+                <Label
+                    Text="Inloggen"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="#111827" />
+
+                <Label
+                    Text="GEBRUIKER / EMAIL"
+                    FontSize="12"
+                    FontAttributes="Bold"
+                    TextColor="#6B7280"
+                    Margin="0,10,0,0" />
+
+                <Frame
+                    CornerRadius="14"
+                    BackgroundColor="#F9FAFB"
+                    BorderColor="#E5E7EB"
+                    Padding="14,0"
+                    HasShadow="False"
+                    HeightRequest="56">
+
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                        <Label
+                            Text="&#xf007;"
+                            FontFamily="FontAwesome"
+                            FontSize="16"
+                            TextColor="#9CA3AF"
+                            VerticalOptions="Center" />
+
+                        <Entry
+                            x:Name="EmailEntry"
+                            Grid.Column="1"
+                            Placeholder="Gebruikersnaam"
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="Transparent"
+                            Keyboard="Email" />
+                    </Grid>
+                </Frame>
+
+                <Label
+                    Text="WACHTWOORD"
+                    FontSize="12"
+                    FontAttributes="Bold"
+                    TextColor="#6B7280"
+                    Margin="0,4,0,0" />
+
+                <Frame
+                    CornerRadius="14"
+                    BackgroundColor="#F9FAFB"
+                    BorderColor="#E5E7EB"
+                    Padding="14,0"
+                    HasShadow="False"
+                    HeightRequest="56">
+
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <Label
+                            Text="&#xf023;"
+                            FontFamily="FontAwesome"
+                            FontSize="16"
+                            TextColor="#9CA3AF"
+                            VerticalOptions="Center" />
+
+                        <Entry
+                            x:Name="PasswordEntry"
+                            Grid.Column="1"
+                            Placeholder="Wachtwoord"
+                            PlaceholderColor="#9CA3AF"
+                            TextColor="#111827"
+                            BackgroundColor="Transparent"
+                            IsPassword="True" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="&#xf06e;"
+                            FontFamily="FontAwesome"
+                            FontSize="15"
+                            TextColor="#9CA3AF"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label
+                        Text="Wachtwoord vergeten?"
+                        TextDecorations="Underline"
+                        TextColor="#2D7DF6"
+                        FontSize="14">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Hulp?"
+                        TextDecorations="Underline"
+                        TextColor="#2D7DF6"
+                        FontAttributes="Bold"
+                        FontSize="14">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHelpLabelTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Button
+                    Text="Inloggen"
+                    HeightRequest="58"
+                    BackgroundColor="#2D7DF6"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="14"
+                    Margin="0,10,0,0"
+                    Clicked="OnLoginClicked" />
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label
+            Grid.Row="2"
+            Text="© 2026 Matrix Inc. Alle rechten voorbehouden."
+            TextColor="#9CA3AF"
+            FontSize="12"
+            HorizontalOptions="Center"
+            Margin="0,20,0,18" />
+
+    </Grid>
+</ContentPage>

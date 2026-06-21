@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KE03_INTDEV_SE_3.Pages.HelpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Hulp"
+    BackgroundColor="#F3F4F6">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+            <Label
+                Text="Hulp bij inloggen"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#111827" />
+
+            <Frame CornerRadius="15" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Kom je niet ingelogd?"
+                        FontSize="20"
+                        FontAttributes="Bold" />
+
+                    <Label Text="Controleer eerst of je gebruikersnaam of email goed is ingevuld." />
+                    <Label Text="Controleer daarna of je wachtwoord klopt." />
+                    <Label Text="Lukt het nog steeds niet? Neem contact op met je teamleider of planner." />
+                    <Label Text="Voorbeeld testaccount:" FontAttributes="Bold" />
+                    <Label Text="Email: noah@matrix.nl" />
+                    <Label Text="Wachtwoord: 1234" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
