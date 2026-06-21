@@ -30,7 +30,7 @@
             <Button
                 x:Name="StartButton"
                 Grid.Column="1"
-                Text="Start"
+                Text="Start rit"
                 BackgroundColor="#2D7DF6"
                 TextColor="White"
                 FontAttributes="Bold"
