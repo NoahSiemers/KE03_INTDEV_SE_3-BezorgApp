@@ -87,6 +87,9 @@
 	  <Compile Update="Pages\AccountPage.xaml.cs">
 	    <DependentUpon>AccountPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\SickReportPage.xaml.cs">
+	    <DependentUpon>SickReportPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -100,6 +103,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\AccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\SickReportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\TodayRidePage.xaml">
