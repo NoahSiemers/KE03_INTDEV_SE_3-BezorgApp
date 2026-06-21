@@ -183,11 +183,11 @@ public partial class MyRidesPage : ContentPage
         };
 
         infoGrid.Add(CreateSmallInfoCard("Pakketten", ride.PackageCount.ToString(), "\uf1b2"), 0, 0);
-        infoGrid.Add(CreateSmallInfoCard("Ingescand", GetScannedText(ride), "\uf058"), 1, 0);
+        //infoGrid.Add(CreateSmallInfoCard("Ingescand", GetScannedText(ride), "\uf058"), 1, 0);
         infoGrid.Add(CreateSmallInfoCard("Datum", ride.RideDate.ToString("dd-MM-yyyy"), "\uf073"), 0, 1);
         infoGrid.Add(CreateSmallInfoCard("Tijd", $"{ride.StartTime:HH:mm} - {ride.EndTime:HH:mm}", "\uf017"), 1, 1);
-        infoGrid.Add(CreateSmallInfoCard("Filiaal", ride.BranchLocation, "\uf54e"), 0, 2);
-        infoGrid.Add(CreateSmallInfoCard("Regio", ride.Region, "\uf3c5"), 1, 2);
+        infoGrid.Add(CreateSmallInfoCard("Filiaal", ride.BranchLocation, "\uf54e"), 1, 0);
+        infoGrid.Add(CreateSmallInfoCard("Regio", ride.Region, "\uf3c5"), 0, 2);
 
         var openButton = CreateRouteOpenButton(ride);
 
@@ -272,15 +272,17 @@ public partial class MyRidesPage : ContentPage
                     Text = "Route openen",
                     FontSize = 15,
                     FontAttributes = FontAttributes.Bold,
-                    TextColor = Colors.White
+                    TextColor = Colors.White,
+                    VerticalTextAlignment = TextAlignment.Center
                 },
                 new Label
                 {
                     Text = "\uf054",
                     FontFamily = "FontAwesome",
-                    FontSize = 14,
-                    TextColor = Colors.White
-                }
+					FontSize = 14,
+                    TextColor = Colors.White,
+					VerticalTextAlignment = TextAlignment.Center
+				}
             }
         };
 
@@ -306,20 +308,22 @@ public partial class MyRidesPage : ContentPage
         frame.GestureRecognizers.Add(tapGesture);
 
         return frame;
-    }
+	}
 
-    private string GetScannedText(Ride ride)
-    {
-        int completed = ride.Packages.Count(p => p.IsCompleted);
-        int total = ride.Packages.Count;
+    //private string GetScannedText(Ride ride)
+    //{
+    //    int completed = ride.Packages.Count(p => p.IsCompleted);
+    //    int total = ride.Packages.Count;
 
-        if (total == 0)
-        {
-            total = ride.PackageCount;
-        }
+    //    if (total == 0)
+    //    {
+    //        total = ride.PackageCount;
+    //    }
 
-        return $"{completed}/{total}";
-    }
+    //    return $"{completed}/{total}";
+    //}
+
+
 
     private string GetRideStatusText(Ride ride)
     {
