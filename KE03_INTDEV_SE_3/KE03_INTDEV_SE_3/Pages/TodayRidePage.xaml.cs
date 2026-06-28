@@ -129,6 +129,26 @@ public partial class TodayRidePage : ContentPage
             return;
         }
 
+        var packagesToLoad = _currentRide.Packages
+            .Where(p =>
+                !p.IsLoadedInBus &&
+                p.ActionType.ToLower() != "ophalen")
+            .OrderBy(p => p.SequenceNumber)
+            .ToList();
+
+        if (packagesToLoad.Any())
+        {
+            SectionTitleLabel.Text = "Bus inladen";
+
+            var nextPackageToLoad = packagesToLoad.First();
+
+            PackagesLayout.Add(CreateLoadPackageCard(nextPackageToLoad));
+
+            return;
+        }
+
+        SectionTitleLabel.Text = "Volgende stop";
+
         var nextPackage = _currentRide.Packages
             .Where(p => !p.IsCompleted)
             .OrderBy(p => p.SequenceNumber)
@@ -147,21 +167,21 @@ public partial class TodayRidePage : ContentPage
                 {
                     Spacing = 8,
                     Children =
+                {
+                    new Label
                     {
-                        new Label
-                        {
-                            Text = "Route afgerond",
-                            FontSize = 23,
-                            FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.FromArgb("#16A34A")
-                        },
-                        new Label
-                        {
-                            Text = "Alle pakketten van deze route zijn afgerond.",
-                            FontSize = 15,
-                            TextColor = Color.FromArgb("#6B7280")
-                        }
+                        Text = "Route afgerond",
+                        FontSize = 23,
+                        FontAttributes = FontAttributes.Bold,
+                        TextColor = Color.FromArgb("#16A34A")
+                    },
+                    new Label
+                    {
+                        Text = "Alle pakketten van deze route zijn afgerond.",
+                        FontSize = 15,
+                        TextColor = Color.FromArgb("#6B7280")
                     }
+                }
                 }
             });
 
@@ -185,6 +205,154 @@ public partial class TodayRidePage : ContentPage
         {
             PackagesLayout.Add(CreatePackageCard(package));
         }
+    }
+
+    private View CreateLoadPackageCard(PackageItem package)
+    {
+        var nameLabel = new Label
+        {
+            Text = package.CustomerName,
+            FontSize = 21,
+            FontAttributes = FontAttributes.Bold,
+            TextColor = Color.FromArgb("#111827")
+        };
+
+        var addressLabel = new Label
+        {
+            Text = package.Address,
+            FontSize = 15,
+            TextColor = Color.FromArgb("#6B7280")
+        };
+
+        var detailsLayout = new HorizontalStackLayout
+        {
+            Spacing = 18,
+            Margin = new Thickness(0, 22, 0, 0),
+            Children =
+        {
+            new HorizontalStackLayout
+            {
+                Spacing = 6,
+                Children =
+                {
+                    new Label
+                    {
+                        Text = "\uf1b2",
+                        FontFamily = "FontAwesome",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#9CA3AF")
+                    },
+                    new Label
+                    {
+                        Text = package.Size,
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#6B7280")
+                    }
+                }
+            },
+            new HorizontalStackLayout
+            {
+                Spacing = 6,
+                Children =
+                {
+                    new Label
+                    {
+                        Text = "\uf5cd",
+                        FontFamily = "FontAwesome",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#9CA3AF")
+                    },
+                    new Label
+                    {
+                        Text = $"{package.WeightKg} kg",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#6B7280")
+                    }
+                }
+            }
+        }
+        };
+
+        var infoButton = CreateActionButton(
+            "\uf05a",
+            "Info",
+            "#6B7280",
+            async () =>
+            {
+                await DisplayAlert(
+                    "Pakket info",
+                    $"Naam: {package.CustomerName}\nAdres: {package.Address}\nType: {package.ActionType}\nGrootte: {package.Size}\nGewicht: {package.WeightKg} kg",
+                    "Ok");
+            });
+
+        var scanButton = CreateActionButton(
+            "\uf030",
+            "Inscannen",
+            "#2D7DF6",
+            async () =>
+            {
+                await LoadPackageIntoBusAsync(package.Id);
+            });
+
+        var buttonGrid = new Grid
+        {
+            ColumnDefinitions =
+        {
+            new ColumnDefinition(),
+            new ColumnDefinition()
+        },
+            ColumnSpacing = 0,
+            Margin = new Thickness(-18, 18, -18, -18),
+            BackgroundColor = Color.FromArgb("#F3F4F6")
+        };
+
+        buttonGrid.Add(infoButton, 0, 0);
+        buttonGrid.Add(scanButton, 1, 0);
+
+        return new Frame
+        {
+            CornerRadius = 24,
+            BackgroundColor = Colors.White,
+            BorderColor = Color.FromArgb("#E5E7EB"),
+            Padding = 18,
+            HasShadow = true,
+            Content = new VerticalStackLayout
+            {
+                Spacing = 8,
+                Children =
+            {
+                nameLabel,
+                addressLabel,
+                detailsLayout,
+                buttonGrid
+            }
+            }
+        };
+    }
+
+    private async Task LoadPackageIntoBusAsync(int packageId)
+    {
+        var package = await _db.Packages.FindAsync(packageId);
+
+        if (package == null)
+        {
+            return;
+        }
+
+        package.IsLoadedInBus = true;
+
+        await _db.SaveChangesAsync();
+
+        try
+        {
+            Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(150));
+        }
+        catch
+        {
+            // Op Windows/emulator kan trillen soms niet.
+        }
+
+        await LoadRideAgainAfterChangeAsync();
     }
 
     private View CreatePackageCard(PackageItem package)

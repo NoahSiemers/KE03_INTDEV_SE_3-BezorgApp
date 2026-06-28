@@ -14,6 +14,7 @@ namespace KE03_INTDEV_SE_3.Models
         public string Size { get; set; } = string.Empty;
         public double WeightKg { get; set; }
         public bool IsCompleted { get; set; }
+        public bool IsLoadedInBus { get; set; }
         public string? DeliveryStatus { get; set; }
         public string? NeighborName { get; set; }
         public string? NeighborHouseNumber { get; set; }

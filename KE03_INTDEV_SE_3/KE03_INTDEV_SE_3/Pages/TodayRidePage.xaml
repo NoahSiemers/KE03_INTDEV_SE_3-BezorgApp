@@ -126,6 +126,7 @@
                 </Frame>
 
                 <Label
+                    x:Name="SectionTitleLabel"
                     Text="Volgende stop"
                     FontSize="22"
                     FontAttributes="Bold"
