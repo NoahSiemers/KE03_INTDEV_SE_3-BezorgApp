@@ -3,32 +3,252 @@
     x:Class="KE03_INTDEV_SE_3.Pages.HelpPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Hulp"
-    BackgroundColor="#F3F4F6">
+    BackgroundColor="#F3F4F6"
+    NavigationPage.HasNavigationBar="False">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="25" Spacing="15">
-            <Label
-                Text="Hulp bij inloggen"
-                FontSize="28"
-                FontAttributes="Bold"
-                TextColor="#111827" />
+    <Grid RowDefinitions="Auto,*">
 
-            <Frame CornerRadius="15" BackgroundColor="White" Padding="20">
-                <VerticalStackLayout Spacing="10">
-                    <Label
-                        Text="Kom je niet ingelogd?"
-                        FontSize="20"
-                        FontAttributes="Bold" />
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            BackgroundColor="#15191C"
+            Padding="20,45,20,18"
+            ColumnDefinitions="Auto,*"
+            ColumnSpacing="12">
 
-                    <Label Text="Controleer eerst of je gebruikersnaam of email goed is ingevuld." />
-                    <Label Text="Controleer daarna of je wachtwoord klopt." />
-                    <Label Text="Lukt het nog steeds niet? Neem contact op met je teamleider of planner." />
-                    <Label Text="Voorbeeld testaccount:" FontAttributes="Bold" />
-                    <Label Text="Email: noah@matrix.nl" />
-                    <Label Text="Wachtwoord: 1234" />
-                </VerticalStackLayout>
+            <Frame
+                WidthRequest="42"
+                HeightRequest="42"
+                CornerRadius="21"
+                BackgroundColor="#2A2F34"
+                Padding="0"
+                HasShadow="False">
+
+                <Label
+                    Text="&#xf060;"
+                    FontFamily="FontAwesome"
+                    TextColor="White"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </Frame>
-        </VerticalStackLayout>
-    </ScrollView>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                <Label
+                    Text="Hulp nodig?"
+                    FontSize="26"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+
+                <Label
+                    Text="Problemen met inloggen"
+                    FontSize="13"
+                    TextColor="#D1D5DB" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="18" Spacing="16">
+
+                <!-- Intro -->
+                <Frame
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="20"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            Text="Kom je niet ingelogd?"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                        <Label
+                            Text="Volg eerst het stappenplan hieronder. Lukt het daarna nog steeds niet, neem dan contact op met kantoor."
+                            FontSize="15"
+                            TextColor="#374151"
+                            LineBreakMode="WordWrap" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Stappenplan -->
+                <Frame
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="20"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="16">
+
+                        <Label
+                            Text="STAPPENPLAN"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <!-- Stap 1 -->
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Frame
+                                WidthRequest="30"
+                                HeightRequest="30"
+                                CornerRadius="15"
+                                BackgroundColor="#DBEAFE"
+                                Padding="0"
+                                HasShadow="False">
+                                <Label
+                                    Text="1"
+                                    TextColor="#2D7DF6"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label
+                                    Text="Controleer je gebruikersnaam"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+
+                                <Label
+                                    Text="Gebruik je gebruikersnaam of e-mailadres zonder spaties. Controleer ook of er geen typfout in staat."
+                                    FontSize="14"
+                                    TextColor="#6B7280" />
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Stap 2 -->
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Frame
+                                WidthRequest="30"
+                                HeightRequest="30"
+                                CornerRadius="15"
+                                BackgroundColor="#DBEAFE"
+                                Padding="0"
+                                HasShadow="False">
+                                <Label
+                                    Text="2"
+                                    TextColor="#2D7DF6"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label
+                                    Text="Controleer je wachtwoord"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+
+                                <Label
+                                    Text="Let op hoofdletters, kleine letters en cijfers. Controleer ook of Caps Lock niet aanstaat."
+                                    FontSize="14"
+                                    TextColor="#6B7280" />
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Stap 3 -->
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Frame
+                                WidthRequest="30"
+                                HeightRequest="30"
+                                CornerRadius="15"
+                                BackgroundColor="#DBEAFE"
+                                Padding="0"
+                                HasShadow="False">
+                                <Label
+                                    Text="3"
+                                    TextColor="#2D7DF6"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label
+                                    Text="Controleer je verbinding"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+
+                                <Label
+                                    Text="Controleer of je internetverbinding werkt. Probeer eventueel te wisselen tussen wifi en mobiele data."
+                                    FontSize="14"
+                                    TextColor="#6B7280" />
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Stap 4 -->
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Frame
+                                WidthRequest="30"
+                                HeightRequest="30"
+                                CornerRadius="15"
+                                BackgroundColor="#DBEAFE"
+                                Padding="0"
+                                HasShadow="False">
+                                <Label
+                                    Text="4"
+                                    TextColor="#2D7DF6"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label
+                                    Text="Start de app opnieuw"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+
+                                <Label
+                                    Text="Sluit de app volledig af en open hem opnieuw. Probeer daarna opnieuw in te loggen."
+                                    FontSize="14"
+                                    TextColor="#6B7280" />
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Telefoonnummer -->
+                <Frame
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    Padding="20"
+                    HasShadow="True"
+                    Margin="0,0,0,20">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="TELEFOONNUMMER KANTOOR"
+                            FontSize="13"
+                            FontAttributes="Bold"
+                            TextColor="#9CA3AF" />
+
+                        <Label
+                            Text="045 123 45 67"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
 </ContentPage>
