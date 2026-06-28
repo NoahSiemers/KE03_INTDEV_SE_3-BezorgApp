@@ -203,7 +203,14 @@ public partial class TodayRidePage : ContentPage
 
         foreach (var package in packagesForSameAddress)
         {
-            PackagesLayout.Add(CreatePackageCard(package));
+            if (package.ActionType.Equals("Ophalen", StringComparison.OrdinalIgnoreCase))
+            {
+                PackagesLayout.Add(CreatePickupPackageCard(package));
+            }
+            else
+            {
+                PackagesLayout.Add(CreatePackageCard(package));
+            }
         }
     }
 
@@ -291,6 +298,15 @@ public partial class TodayRidePage : ContentPage
             "#2D7DF6",
             async () =>
             {
+                await ScanPackageWithCameraAsync(package);
+            });
+
+        var loadedButton = CreateActionButton(
+            "\uf058",
+            "Ingeladen",
+            "#16A34A",
+            async () =>
+            {
                 await LoadPackageIntoBusAsync(package.Id);
             });
 
@@ -298,6 +314,7 @@ public partial class TodayRidePage : ContentPage
         {
             ColumnDefinitions =
         {
+            new ColumnDefinition(),
             new ColumnDefinition(),
             new ColumnDefinition()
         },
@@ -308,6 +325,7 @@ public partial class TodayRidePage : ContentPage
 
         buttonGrid.Add(infoButton, 0, 0);
         buttonGrid.Add(scanButton, 1, 0);
+        buttonGrid.Add(loadedButton, 2, 0);
 
         return new Frame
         {
@@ -504,6 +522,151 @@ public partial class TodayRidePage : ContentPage
         };
     }
 
+    private View CreatePickupPackageCard(PackageItem package)
+    {
+        var statusLabel = new Label
+        {
+            Text = "Ophalen",
+            FontSize = 12,
+            FontAttributes = FontAttributes.Bold,
+            TextColor = Color.FromArgb("#EA580C"),
+            BackgroundColor = Color.FromArgb("#FFEDD5"),
+            Padding = new Thickness(9, 4),
+            HorizontalOptions = LayoutOptions.Start
+        };
+
+        var nameLabel = new Label
+        {
+            Text = package.CustomerName,
+            FontSize = 21,
+            FontAttributes = FontAttributes.Bold,
+            TextColor = Color.FromArgb("#111827")
+        };
+
+        var addressLabel = new Label
+        {
+            Text = package.Address,
+            FontSize = 15,
+            TextColor = Color.FromArgb("#6B7280")
+        };
+
+        var detailsLayout = new HorizontalStackLayout
+        {
+            Spacing = 18,
+            Children =
+        {
+            new HorizontalStackLayout
+            {
+                Spacing = 6,
+                Children =
+                {
+                    new Label
+                    {
+                        Text = "\uf1b2",
+                        FontFamily = "FontAwesome",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#9CA3AF")
+                    },
+                    new Label
+                    {
+                        Text = package.Size,
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#6B7280")
+                    }
+                }
+            },
+            new HorizontalStackLayout
+            {
+                Spacing = 6,
+                Children =
+                {
+                    new Label
+                    {
+                        Text = "\uf5cd",
+                        FontFamily = "FontAwesome",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#9CA3AF")
+                    },
+                    new Label
+                    {
+                        Text = $"{package.WeightKg} kg",
+                        FontSize = 14,
+                        TextColor = Color.FromArgb("#6B7280")
+                    }
+                }
+            }
+        }
+        };
+
+        var infoButton = CreateActionButton(
+            "\uf05a",
+            "Info",
+            "#6B7280",
+            async () =>
+            {
+                await DisplayAlert(
+                    "Pakket info",
+                    $"Naam: {package.CustomerName}\nAdres: {package.Address}\nType: {package.ActionType}\nGrootte: {package.Size}\nGewicht: {package.WeightKg} kg",
+                    "Ok");
+            });
+
+        var scanButton = CreateActionButton(
+            "\uf030",
+            "Inscannen",
+            "#2D7DF6",
+            async () =>
+            {
+                await ScanPackageWithCameraAsync(package);
+            });
+
+        var completeButton = CreateActionButton(
+            "\uf058",
+            "Afgerond",
+            "#16A34A",
+            async () =>
+            {
+                await CompletePickupPackageAsync(package.Id);
+            });
+
+        var buttonGrid = new Grid
+        {
+            ColumnDefinitions =
+        {
+            new ColumnDefinition(),
+            new ColumnDefinition(),
+            new ColumnDefinition()
+        },
+            ColumnSpacing = 0,
+            Margin = new Thickness(-18, 12, -18, -18),
+            BackgroundColor = Color.FromArgb("#F3F4F6")
+        };
+
+        buttonGrid.Add(infoButton, 0, 0);
+        buttonGrid.Add(scanButton, 1, 0);
+        buttonGrid.Add(completeButton, 2, 0);
+
+        return new Frame
+        {
+            CornerRadius = 24,
+            BackgroundColor = Colors.White,
+            BorderColor = Color.FromArgb("#E5E7EB"),
+            Padding = 18,
+            HasShadow = true,
+            Content = new VerticalStackLayout
+            {
+                Spacing = 8,
+                Children =
+            {
+                statusLabel,
+                nameLabel,
+                addressLabel,
+                detailsLayout,
+                buttonGrid
+            }
+            }
+        };
+    }
+
     private View CreateActionButton(string icon, string text, string color, Func<Task> action)
     {
         var layout = new VerticalStackLayout
@@ -635,6 +798,70 @@ public partial class TodayRidePage : ContentPage
 
             return _timerRunning;
         });
+    }
+
+    private async Task ScanPackageWithCameraAsync(PackageItem package)
+    {
+        try
+        {
+            if (!MediaPicker.Default.IsCaptureSupported)
+            {
+                await DisplayAlert("Camera niet beschikbaar", "Op dit apparaat kan de camera niet worden geopend.", "Ok");
+                return;
+            }
+
+            var photo = await MediaPicker.Default.CapturePhotoAsync(new MediaPickerOptions
+            {
+                Title = $"Pakket scannen - {package.CustomerName}"
+            });
+
+            if (photo == null)
+            {
+                return;
+            }
+
+            try
+            {
+                Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(150));
+            }
+            catch
+            {
+                // Trillen werkt niet altijd op emulator of Windows.
+            }
+
+            await DisplayAlert("Ingescand", "Het pakket is ingescand.", "Ok");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Camera fout", $"De camera kon niet geopend worden: {ex.Message}", "Ok");
+        }
+    }
+
+    private async Task CompletePickupPackageAsync(int packageId)
+    {
+        var package = await _db.Packages.FindAsync(packageId);
+
+        if (package == null)
+        {
+            return;
+        }
+
+        package.DeliveryStatus = "Opgehaald";
+        package.IsCompleted = true;
+        package.CompletedAt = DateTime.Now;
+
+        await _db.SaveChangesAsync();
+
+        try
+        {
+            Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(300));
+        }
+        catch
+        {
+            // Trillen werkt niet altijd op emulator of Windows.
+        }
+
+        await LoadRideAgainAfterChangeAsync();
     }
 
     private string FormatTime(TimeSpan time)
