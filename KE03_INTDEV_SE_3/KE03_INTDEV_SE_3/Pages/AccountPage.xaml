@@ -3,37 +3,706 @@
     x:Class="KE03_INTDEV_SE_3.Pages.AccountPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Account"
+    Title="Dienstcentrum"
     BackgroundColor="#F3F4F6">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
-        <Label
-            Text="Account &amp; meldingen"
-            FontSize="30"
-            FontAttributes="Bold"
-            TextColor="#111827" />
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
 
-        <Frame CornerRadius="15" BackgroundColor="White" Padding="18">
-            <VerticalStackLayout Spacing="8">
-                <Label
-                    x:Name="NameLabel"
-                    FontSize="22"
-                    FontAttributes="Bold" />
+            <!-- Header -->
+            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                <VerticalStackLayout Spacing="3">
+                    <Label
+                        Text="Dienstcentrum"
+                        FontSize="31"
+                        FontAttributes="Bold"
+                        TextColor="#111827" />
 
-                <Label
-                    x:Name="EmailLabel"
-                    FontSize="15"
-                    TextColor="#374151" />
+                    <Label
+                        Text="Profiel, dienststatus en voorbereiding"
+                        FontSize="14"
+                        TextColor="#6B7280" />
+                </VerticalStackLayout>
 
-                <Label
-                    Text="Meldingen"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    Margin="0,15,0,0" />
+                <Frame
+                    Grid.Column="1"
+                    WidthRequest="46"
+                    HeightRequest="46"
+                    CornerRadius="17"
+                    BackgroundColor="#15191C"
+                    Padding="0"
+                    HasShadow="False">
 
-                <Label Text="• Nieuwe ritten worden hier later getoond." />
-                <Label Text="• Pakketmeldingen komen hier later te staan." />
-            </VerticalStackLayout>
-        </Frame>
-    </VerticalStackLayout>
+                    <Label
+                        Text="&#xf0d1;"
+                        FontFamily="FontAwesome"
+                        FontSize="19"
+                        TextColor="#2D7DF6"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                </Frame>
+            </Grid>
+
+            <!-- Profile card -->
+            <Frame
+                CornerRadius="26"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="20">
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="16">
+
+                    <Frame
+                        WidthRequest="78"
+                        HeightRequest="78"
+                        CornerRadius="39"
+                        BackgroundColor="#15191C"
+                        Padding="0"
+                        HasShadow="False"
+                        VerticalOptions="Start">
+
+                        <Label
+                            x:Name="InitialsLabel"
+                            Text="?"
+                            FontSize="25"
+                            FontAttributes="Bold"
+                            TextColor="#2D7DF6"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="7">
+                        <Label
+                            x:Name="NameLabel"
+                            Text="Bezorger laden..."
+                            FontSize="23"
+                            FontAttributes="Bold"
+                            TextColor="#111827"
+                            LineBreakMode="TailTruncation" />
+
+                        <Label
+                            x:Name="EmailLabel"
+                            Text="Email laden..."
+                            FontSize="14"
+                            TextColor="#374151"
+                            LineBreakMode="TailTruncation" />
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Frame
+                                BackgroundColor="#EFF6FF"
+                                BorderColor="#BFDBFE"
+                                CornerRadius="12"
+                                Padding="10,5"
+                                HasShadow="False">
+
+                                <Label
+                                    Text="Bezorger"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="#1D4ED8" />
+                            </Frame>
+
+                            <Frame
+                                x:Name="LoginStatusBadge"
+                                BackgroundColor="#ECFDF3"
+                                BorderColor="#ABEFC6"
+                                CornerRadius="12"
+                                Padding="10,5"
+                                HasShadow="False">
+
+                                <Label
+                                    x:Name="LoginStatusLabel"
+                                    Text="Ingelogd"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="#027A48" />
+                            </Frame>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Today's shift -->
+            <Frame
+                CornerRadius="24"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="3">
+                            <Label
+                                Text="Mijn dienst vandaag"
+                                FontSize="21"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                x:Name="TodayDateLabel"
+                                Text="Datum laden..."
+                                FontSize="13"
+                                TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Frame
+                            x:Name="ShiftStatusBadge"
+                            Grid.Column="1"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            CornerRadius="14"
+                            Padding="10,6"
+                            HasShadow="False">
+
+                            <Label
+                                x:Name="ShiftStatusLabel"
+                                Text="Controleren"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#6B7280" />
+                        </Frame>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <!-- Small dashboard -->
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            CornerRadius="18"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            Padding="14"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Pakketten" FontSize="12" TextColor="#6B7280" />
+                                <Label
+                                    x:Name="TotalPackagesLabel"
+                                    Text="0"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            CornerRadius="18"
+                            BackgroundColor="#ECFDF3"
+                            BorderColor="#ABEFC6"
+                            Padding="14"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Afgerond" FontSize="12" TextColor="#027A48" />
+                                <Label
+                                    x:Name="CompletedPackagesLabel"
+                                    Text="0"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    TextColor="#027A48" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            CornerRadius="18"
+                            BackgroundColor="#FFF7ED"
+                            BorderColor="#FED7AA"
+                            Padding="14"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Openstaand" FontSize="12" TextColor="#C2410C" />
+                                <Label
+                                    x:Name="OpenPackagesLabel"
+                                    Text="0"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    TextColor="#C2410C" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            CornerRadius="18"
+                            BackgroundColor="#EFF6FF"
+                            BorderColor="#BFDBFE"
+                            Padding="14"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Voortgang" FontSize="12" TextColor="#1D4ED8" />
+                                <Label
+                                    x:Name="ProgressPercentageLabel"
+                                    Text="0%"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    TextColor="#1D4ED8" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <!-- Shift details -->
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="14">
+
+                        <Label
+                            Grid.Row="0"
+                            Text="&#xf017;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <Label Text="Diensttijd" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="ShiftTimeLabel"
+                                Text="Geen dienst geladen"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="1"
+                            Text="&#xf54e;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="2">
+                            <Label Text="Depot" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="DepotLabel"
+                                Text="Geen depot beschikbaar"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="2"
+                            Text="&#xf0d1;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="2">
+                            <Label Text="Bus en regio" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="BusRouteLabel"
+                                Text="Geen bus gekoppeld"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="3"
+                            Text="&#xf1b2;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="3" Grid.Column="1" Spacing="2">
+                            <Label Text="Routevoortgang" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="PackageProgressLabel"
+                                Text="Geen pakketten geladen"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Route impact -->
+            <Frame
+                CornerRadius="24"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="3">
+                            <Label
+                                Text="Route-impact"
+                                FontSize="21"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                Text="Wat gebeurt er met de planning als jij uitvalt?"
+                                FontSize="13"
+                                TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="1"
+                            Text="&#xf074;"
+                            FontFamily="FontAwesome"
+                            FontSize="20"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+                    </Grid>
+
+                    <Frame
+                        CornerRadius="18"
+                        BackgroundColor="#F9FAFB"
+                        BorderColor="#E5E7EB"
+                        Padding="14"
+                        HasShadow="False">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label
+                                x:Name="RouteImpactTitleLabel"
+                                Text="Geen route gekoppeld"
+                                FontSize="17"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                x:Name="RouteImpactDescriptionLabel"
+                                Text="Zodra er een dienst is gekoppeld, toont de app de impact op route, bus en pakketten."
+                                FontSize="14"
+                                TextColor="#374151"
+                                LineBreakMode="WordWrap" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame
+                        x:Name="SickReportHintFrame"
+                        CornerRadius="18"
+                        BackgroundColor="#FFFBEB"
+                        BorderColor="#FDE68A"
+                        Padding="14"
+                        HasShadow="False">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label
+                                Text="Ziekmeldadvies"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="#92400E" />
+
+                            <Label
+                                x:Name="SickReportHintLabel"
+                                Text="Ziekmelden wordt gecontroleerd op basis van je diensttijd."
+                                FontSize="13"
+                                TextColor="#92400E"
+                                LineBreakMode="WordWrap" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Readiness check -->
+            <Frame
+                CornerRadius="24"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Spacing="3">
+                            <Label
+                                Text="Dienstgereed-check"
+                                FontSize="21"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+
+                            <Label
+                                Text="Controle vóór vertrek"
+                                FontSize="13"
+                                TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Frame
+                            x:Name="ReadinessStatusBadge"
+                            Grid.Column="1"
+                            BackgroundColor="#F9FAFB"
+                            BorderColor="#E5E7EB"
+                            CornerRadius="14"
+                            Padding="10,6"
+                            HasShadow="False">
+
+                            <Label
+                                x:Name="ReadinessStatusLabel"
+                                Text="Check"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#6B7280" />
+                        </Frame>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="14">
+
+                        <Label
+                            Grid.Row="0"
+                            Text="&#xf1eb;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <Label Text="Internetverbinding" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="ConnectivityStatusLabel"
+                                Text="Nog niet gecontroleerd"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="1"
+                            Text="&#xf3cd;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="2">
+                            <Label Text="Apparaat" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="DeviceStatusLabel"
+                                Text="Nog niet gecontroleerd"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="2"
+                            Text="&#xf242;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="2">
+                            <Label Text="Batterij" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="BatteryStatusLabel"
+                                Text="Nog niet gecontroleerd"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Row="3"
+                            Text="&#xf2f1;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Row="3" Grid.Column="1" Spacing="2">
+                            <Label Text="Laatste controle" FontSize="12" TextColor="#6B7280" />
+                            <Label
+                                x:Name="LastReadinessCheckLabel"
+                                Text="Nog niet uitgevoerd"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#111827" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Frame
+                        x:Name="ReadinessAdviceFrame"
+                        CornerRadius="18"
+                        BackgroundColor="#EFF6FF"
+                        BorderColor="#BFDBFE"
+                        Padding="14"
+                        HasShadow="False">
+
+                        <Label
+                            x:Name="ReadinessAdviceLabel"
+                            Text="Voer de controle uit voordat je aan je route begint."
+                            FontSize="13"
+                            TextColor="#1D4ED8"
+                            LineBreakMode="WordWrap" />
+                    </Frame>
+
+                    <Button
+                        Text="Dienstgereed-check opnieuw uitvoeren"
+                        HeightRequest="52"
+                        BackgroundColor="#2D7DF6"
+                        TextColor="White"
+                        CornerRadius="14"
+                        FontAttributes="Bold"
+                        Clicked="OnReadinessCheckTapped" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Account actions -->
+            <Frame
+                CornerRadius="24"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="0">
+
+                    <Label
+                        Text="Mijn informatie"
+                        FontSize="21"
+                        FontAttributes="Bold"
+                        TextColor="#111827"
+                        Margin="0,0,0,12" />
+
+                    <Grid Padding="0,12" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <Label
+                            Text="&#xf2bb;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="Persoonlijke gegevens" FontSize="16" FontAttributes="Bold" TextColor="#111827" />
+                            <Label Text="Bekijk je account- en dienstgegevens" FontSize="13" TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" Text="›" FontSize="28" TextColor="#9CA3AF" VerticalOptions="Center" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <Grid Padding="0,12" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSickReportTapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Label
+                            Text="&#xf0fa;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#DC2626"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="Ziekmelden" FontSize="16" FontAttributes="Bold" TextColor="#111827" />
+                            <Label Text="3-uursregel en route-impact controleren" FontSize="13" TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" Text="›" FontSize="28" TextColor="#9CA3AF" VerticalOptions="Center" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <Grid Padding="0,12" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHelpTapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Label
+                            Text="&#xf059;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="Hulp en ondersteuning" FontSize="16" FontAttributes="Bold" TextColor="#111827" />
+                            <Label Text="Inloggen, planner en veelgestelde vragen" FontSize="13" TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" Text="›" FontSize="28" TextColor="#9CA3AF" VerticalOptions="Center" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E5E7EB" />
+
+                    <Grid Padding="0,12" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRefreshTapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Label
+                            Text="&#xf2f1;"
+                            FontFamily="FontAwesome"
+                            FontSize="18"
+                            TextColor="#2D7DF6"
+                            VerticalOptions="Center" />
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="Gegevens verversen" FontSize="16" FontAttributes="Bold" TextColor="#111827" />
+                            <Label Text="Haal je actuele dienstinformatie opnieuw op" FontSize="13" TextColor="#6B7280" />
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" Text="›" FontSize="28" TextColor="#9CA3AF" VerticalOptions="Center" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Notifications -->
+            <Frame
+                CornerRadius="24"
+                BackgroundColor="White"
+                BorderColor="#E5E7EB"
+                HasShadow="True"
+                Padding="18">
+
+                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                    <Label
+                        Text="&#xf0f3;"
+                        FontFamily="FontAwesome"
+                        FontSize="18"
+                        TextColor="#2D7DF6"
+                        VerticalOptions="Center" />
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Meldingen" FontSize="16" FontAttributes="Bold" TextColor="#111827" />
+                        <Label Text="Nieuwe ritten en pakketwijzigingen" FontSize="13" TextColor="#6B7280" />
+                    </VerticalStackLayout>
+
+                    <Switch
+                        x:Name="NotificationsSwitch"
+                        Grid.Column="2"
+                        IsToggled="True"
+                        VerticalOptions="Center"
+                        Toggled="OnNotificationsToggled" />
+                </Grid>
+            </Frame>
+
+            <Button
+                Text="Uitloggen"
+                HeightRequest="56"
+                BackgroundColor="White"
+                TextColor="#DC2626"
+                BorderColor="#FCA5A5"
+                BorderWidth="1"
+                CornerRadius="16"
+                FontAttributes="Bold"
+                Clicked="OnLogoutClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
