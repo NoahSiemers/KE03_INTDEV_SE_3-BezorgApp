@@ -8,11 +8,13 @@
 
     <Grid RowDefinitions="Auto,*">
 
+        <!-- Header -->
         <Grid
             Grid.Row="0"
             BackgroundColor="#15191C"
             Padding="20,45,20,22"
-            ColumnDefinitions="*,Auto">
+            ColumnDefinitions="*,Auto"
+            ColumnSpacing="12">
 
             <VerticalStackLayout Spacing="4">
                 <Label
@@ -27,21 +29,82 @@
                     TextColor="#D1D5DB" />
             </VerticalStackLayout>
 
-            <Button
-                x:Name="StartButton"
+            <VerticalStackLayout
                 Grid.Column="1"
-                Text="Start rit"
-                BackgroundColor="#2D7DF6"
-                TextColor="White"
-                FontAttributes="Bold"
-                CornerRadius="18"
-                Padding="18,10"
-                Clicked="OnStartClicked" />
+                Spacing="6"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+
+                <Frame
+                    x:Name="FlowStepBadgeFrame"
+                    CornerRadius="16"
+                    BackgroundColor="#2D7DF6"
+                    Padding="12,6"
+                    HasShadow="False">
+
+                    <Label
+                        x:Name="FlowStepBadgeLabel"
+                        Text="Stap 1/6"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="White" />
+                </Frame>
+
+                <Label
+                    x:Name="RouteTimerLabel"
+                    Text="Nog niet gestart"
+                    FontSize="12"
+                    TextColor="#D1D5DB"
+                    HorizontalTextAlignment="End" />
+            </VerticalStackLayout>
         </Grid>
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="16">
 
+                <!-- Current step -->
+                <Frame
+                    CornerRadius="24"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="True"
+                    Padding="18">
+
+                    <VerticalStackLayout Spacing="14">
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Spacing="4">
+                                <Label
+                                    x:Name="CurrentStepTitleLabel"
+                                    Text="Dienst controleren"
+                                    FontSize="22"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827" />
+
+                                <Label
+                                    x:Name="CurrentStepDescriptionLabel"
+                                    Text="Controleer eerst of je de juiste dienst, bus en route voor je hebt."
+                                    FontSize="14"
+                                    TextColor="#6B7280"
+                                    LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="&#xf0ae;"
+                                FontFamily="FontAwesome"
+                                FontSize="22"
+                                TextColor="#2D7DF6"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+                        <VerticalStackLayout
+                            x:Name="StepIndicatorLayout"
+                            Spacing="8" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Ride info -->
                 <Frame
                     x:Name="RideInfoFrame"
                     CornerRadius="22"
@@ -102,7 +165,7 @@
 
                             <VerticalStackLayout Spacing="2" HorizontalOptions="Center">
                                 <Label
-                                    Text="Nog te leveren"
+                                    Text="Open"
                                     FontSize="11"
                                     TextColor="#6B7280"
                                     HorizontalTextAlignment="Center" />
@@ -124,16 +187,10 @@
                     </Grid>
                 </Frame>
 
-                <Label
-                    Text="Volgende stop"
-                    FontSize="22"
-                    FontAttributes="Bold"
-                    TextColor="#111827"
-                    Margin="2,4,0,0" />
-
+                <!-- Dynamic workflow content -->
                 <VerticalStackLayout
-                    x:Name="PackagesLayout"
-                    Spacing="15" />
+                    x:Name="WorkPanelLayout"
+                    Spacing="16" />
 
             </VerticalStackLayout>
         </ScrollView>
