@@ -38,6 +38,8 @@ public static class MauiProgram
         builder.Services.AddTransient<MyRidesPage>();
         builder.Services.AddTransient<AccountPage>();
         builder.Services.AddTransient<StatusPage>();
+        builder.Services.AddTransient<PackageProblemPage>();
+
 
 #if DEBUG
         builder.Logging.AddDebug();
