@@ -24,7 +24,7 @@ public static class MauiProgram
 
         string databasePath = Path.Combine(
             FileSystem.AppDataDirectory,
-            "MatrixIncRittenDb.db"
+            "MatrixIncRittenDb_v2.db"
         );
 
         builder.Services.AddDbContext<AppDbContext>(options =>
